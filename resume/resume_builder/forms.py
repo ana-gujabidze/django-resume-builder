@@ -1,7 +1,7 @@
 from django import forms
 from tinymce.widgets import TinyMCE
 
-from .models import Resume
+from resume_builder.models import Resume
 
 
 class ResumeForm(forms.ModelForm):

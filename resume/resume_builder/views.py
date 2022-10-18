@@ -1,10 +1,9 @@
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
-from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
-                                  TemplateView, UpdateView)
+from django.views.generic import CreateView, DeleteView, DetailView, ListView, TemplateView, UpdateView
 
-from .forms import ResumeForm
-from .models import Resume
+from resume_builder.forms import ResumeForm
+from resume_builder.models import Resume
 
 
 class HomepageView(TemplateView):
