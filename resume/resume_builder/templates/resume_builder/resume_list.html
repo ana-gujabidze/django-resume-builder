@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block content %}
+<div>
+    <h1 class="list-header">List of filled out forms</h1>
+    {% for account in resume_list %}
+    <div class="row list-item">
+        <div class="col-6">
+            <h3 class="profile-name">{{ account.firstname }} {{ account.lastname }}</h3>
+            <p class="email">{{ account.email }}</p>
+        </div>
+        <div class="col-6">
+            <a href="{% url 'resume_detail' pk=account.pk %}" title="Preview PDF" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square fa-2xl list-icon"></i></a>
+            <a href="{% url 'resume_edit' pk=account.pk %}" target="_parent" title="Edit Profile"><i class="fa-solid fa-file-pen fa-2xl"></i></a>
+            <a href="{% url 'resume_remove' pk=account.pk %}" target="_parent" title="Delete Profile"><i class="fa-solid fa-trash-can fa-2xl"></i></a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+{% endblock %}
