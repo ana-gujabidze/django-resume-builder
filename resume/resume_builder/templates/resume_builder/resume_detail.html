@@ -1,0 +1,169 @@
+{% extends 'base.html' %} {% block content %}
+<div class="resume">
+<div class="resume-header">
+{% if object.user_img %}
+<div class="user-img">
+    <img src="{{object.user_img.url}}" alt="resume-image">
+</div>
+{% endif %}
+{% if object.firstname%}
+
+<h1 class="fullname">{{object.firstname}} {{object.lastname}}, {{object.desired_position}}</h1>
+
+{% endif %}
+
+{% if object.email and object.phone %}
+
+<p>{{object.email}} {{object.phone}}</p>
+
+{% endif %}
+
+{% if object.city and object.country %}
+
+<p>{{object.city}}, {{object.country}}</p>
+<div class="line-break"></div>
+
+{% endif %}
+</div>
+
+{% if object.professional_summary%}
+
+<div class="resume-group">
+
+<div class="left-col"><p>ABOUT ME</p></div>
+
+<div class="right-col">
+
+<p>{{object.professional_summary}}
+
+</p>
+
+</div>
+
+</div>
+<div class="line-break"></div>
+
+{% endif %}
+
+{% if object.career_obj %}
+
+<div class="resume-group"><div class="left-col">
+
+<p>CAREER OBJECTIVES</p>
+
+</div>
+
+<div class="right-col">
+
+<p>{{object.career_obj}}</p>
+
+</div>
+
+</div>
+<div class="line-break"></div>
+
+{% endif %}
+
+{% if object.education %}
+
+<div class="resume-group">
+
+<div class="left-col">
+
+<p>EDUCATION</p>
+
+</div>
+
+<div class="right-col">
+
+<p>{{object.education}}</p>
+
+</div>
+
+</div>
+<div class="line-break"></div>
+
+{% endif %}
+
+<div class="resume-group">
+
+<div class="left-col">
+
+<p>EMPLOYMENT EXPERIENCE</p>
+
+</div>
+
+<div class="right-col">
+
+<p></p>
+
+</div>
+
+</div>
+
+{% if object.job_1_start_dt and object.job_1_end_dt %}
+
+<div class="resume-group">
+
+<div class="left-col">
+
+<p>{{object.job_1_start_dt}} to {{object.job_1_end_dt}}</p>
+
+</div>
+
+<div class="right-col">
+
+<p>{{object.job_1_description}}
+
+</p>
+
+</div>
+
+</div>
+
+{% endif %}
+
+{% if object.job_2_start_dt and object.job_2_end_dt %}
+
+<div class="resume-group">
+
+<div class="left-col">
+
+<p>{{object.job_2_start_dt}} to {{object.job_2_end_dt}}</p>
+
+</div>
+
+<div class="right-col">
+
+<p>{{object.job_2_description}}
+
+</p>
+
+</div>
+
+</div>
+<div class="line-break"></div>
+
+{% endif %}
+
+<div class="resume-group">
+
+<div class="left-col">
+
+<p>REFERENCES</p>
+
+</div>
+
+<div class="right-col">
+
+<p>{% if object.references %}{{object.references}}{% else %}Available upon request{% endif %}</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="instructions">Ctrl + P and "Save As PDF" to make a copy of this resume</div>   
+
+{% endblock %}
