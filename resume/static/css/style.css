@@ -1,0 +1,190 @@
+body{
+    background-color: #184D47;
+    font-family: 'Montserrat', sans-serif;
+}
+.container {
+    margin: 3.75rem auto;
+}
+
+.list-item {
+    border: 1px solid;
+    margin-bottom: 2%;
+    padding: 2%;
+}
+
+.btn-primary{
+    background-color: #C64756;
+    border-color: #96BB7C;
+    color: #FAD586;
+}
+.btn-primary:hover{
+    background-color: #FAD586;
+    color: #C64756;
+}
+.resume-header h1, .resume-header p {
+    text-align: center;
+}
+
+.form-control {
+    background-color: #FAD586;
+}
+
+.resume-form h2 {
+    font-weight: 600;
+}
+
+body * {
+    color: #96BB7C;
+}
+
+body p {
+    color: #FAD586;
+}
+
+i {
+    padding-right: 0.938rem;
+    color: #C64756;
+}
+
+i:hover{
+    color: #FAD586;
+}
+
+.list-icon {
+    margin: 7.5% 0 0 50%;
+}
+
+.resume-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 10%;
+    color: #96BB7C;;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-header {
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.personal-info {
+    border-top: 6mm solid #82acd9;
+}
+
+
+.resume h1, .resume p {
+
+box-sizing: border-box;
+
+margin: 0px;
+
+padding: 0px 24px;
+color: #000000;
+
+}
+
+.line-break {
+
+width: 100%;
+
+height: 1px;
+
+margin: 16px auto;
+
+border-bottom: 1px solid #C64756;
+
+}
+
+.resume {
+
+border-radius: 8px;
+
+box-sizing: border-box;
+
+display: flex;
+
+flex-direction: column;
+
+max-width: 800px;
+
+margin: 48px auto;
+
+padding: 16px 0px;
+
+background: #FAD586;
+
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.14);
+
+}
+
+.resume-group {
+
+box-sizing: border-box;
+
+padding: 8px 0px;
+
+width: 100%;
+
+display: flex;
+
+border-left: 3px solid transparent;
+
+transition: 0.2s;
+
+}
+
+.resume-group:hover {
+
+border-left: 3px solid #C64756;
+
+}
+
+.left-col {
+
+width: 35%;
+font-weight: 600;
+
+}
+
+.right-col {
+
+width: 65%;
+
+}
+
+.instructions {
+
+opacity: 0.5;
+
+text-align: center;
+
+font-size: 0.8rem;
+
+margin: 16px auto;
+color: #FAD586;
+}
+
+.user-img {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    width: 25%;
+    height: 25%;
+    border-radius: 50%;
+}
+
+.asteriskField {
+    color: #cd2126;
+}
