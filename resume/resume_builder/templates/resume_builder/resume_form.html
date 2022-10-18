@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="resume-form">
+<div class="resume-header">
+  <h1>Build Your Resume</h1>
+  <p>Enter the fields below to generate a resume file.</p>
+</div>
+<h2>Personal Details</h2>
+<form method="post" action="{% url 'resume_view' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-6">
+        {{ form.desired_position|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.user_img|as_crispy_field }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        {{ form.firstname|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.lastname|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.email|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.phone|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.country|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.city|as_crispy_field }}
+      </div>
+    </div>
+    <h2>Professional Summary</h2>
+    <p class="info-text">Write 2-4 short & energetic sentences to interest the reader! Mention your role, experience & most importantly - your biggest achievements, best qualities and skills.</p>
+    <div class="professional-summary">
+    {{ form.professional_summary|as_crispy_field }}
+    <h2>Career Objectives</h2>
+    <p class="info-text">List down 5 of the most important skills to show your talents.</p>
+    <div class="career-obj">
+    {{ form.career_obj|as_crispy_field }}
+    </div>
+    <h2>Education</h2>
+    <p class="info-text">A varied education on your resume sums up the value that your learnings and background will bring to job.</p>
+    <div class="education">
+    {{ form.education|as_crispy_field }}
+    </div>
+    <h2>Work Experience</h2>
+    <p class="info-text">Show your relevant experience (last 3 years). Use bullet points to note your achievements, if possible - use numbers/facts (Achieved X, measured by Y, by doing Z).</p>
+    <h3>Most Recent Job</h3>
+    <div class="row">
+      <div class="col-6">
+        {{ form.job_1_start_dt|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.job_1_end_dt|as_crispy_field }}
+      </div>
+    </div>
+    <div class="job-1-desc">
+      {{ form.job_1_description|as_crispy_field }}
+    </div>
+    <h3>Past Job</h3>
+    <div class="row">
+      <div class="col-6">
+        {{ form.job_2_start_dt|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.job_2_end_dt|as_crispy_field }}
+      </div>
+    </div>
+    <div class="job-1-desc">
+      {{ form.job_2_description|as_crispy_field }}
+    </div>
+    <h2>References</h2>
+    <p class="info-text">Provide references only upon request.</p>
+    <div class="references">
+    {{ form.references|as_crispy_field }}
+    </div>
+    <button type="submit" class="btn btn-primary">Save Info</button>
+  </form>
+</div>
+{% endblock %}
