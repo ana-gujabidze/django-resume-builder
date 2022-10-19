@@ -1,7 +1,7 @@
 # Dockerized Django Resume Builder
 
 ## Common Usage
-Python command-line tool allows to:
+Django app allows to:
 - create resume by filling out personal information, education background and etc
 - view created resume, edit or delete it
 
